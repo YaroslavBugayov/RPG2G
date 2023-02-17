@@ -13,10 +13,6 @@ public class InputReader : MonoBehaviour
     {
         _directionX = Input.GetAxis("Horizontal");
         _directionY = Input.GetAxis("Vertical");
-    }
-
-    private void FixedUpdate()
-    {
-        _playerMovement.MoveHorizontally(_directionX, _directionY);
+        _playerMovement.ProcessInputs(_directionX, _directionY);
     }
 }
