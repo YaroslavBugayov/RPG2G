@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
   m_Name: OceanTile
   m_EditorClassIdentifier: 
-  m_AnimatedSprites: []
-  m_MinSpeed: 1
-  m_MaxSpeed: 1
+  m_AnimatedSprites:
+  - {fileID: -252621081, guid: 8f9e22cedd5120d48a9ecbf410d6174c, type: 3}
+  - {fileID: 1871999166, guid: 8f9e22cedd5120d48a9ecbf410d6174c, type: 3}
+  - {fileID: -861690917, guid: 8f9e22cedd5120d48a9ecbf410d6174c, type: 3}
+  - {fileID: -1127040799, guid: 8f9e22cedd5120d48a9ecbf410d6174c, type: 3}
+  m_MinSpeed: 2
+  m_MaxSpeed: 2
   m_AnimationStartTime: 0
   m_AnimationStartFrame: 0
   m_TileColliderType: 0
