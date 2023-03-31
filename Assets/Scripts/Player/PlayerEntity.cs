@@ -13,14 +13,14 @@ namespace Player
         private Rigidbody2D _rigidbody;
         private Animator _animator;
         private DirectionalMover _directionalMover;
-        private UnityAnimatorController _animatorController;
+        private AnimatorController _animatorController;
     
         private void Start()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
             _directionalMover = new DirectionalMover(_rigidbody, _directionalMovementData);
-            _animatorController = new UnityAnimatorController();
+            _animatorController = new AnimatorController(_animator);
         }
 
         public void Use()
