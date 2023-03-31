@@ -1,7 +1,7 @@
-﻿namespace Player
+﻿namespace Player.PlayerAnimation
 {
     public enum AnimationType
     {
-        
+        Chop
     }
 }
