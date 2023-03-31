@@ -1,9 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using Core.Services.Updater;
+using InputReader;
 
 namespace Player
 {
-    public class PlayerBrain
+    public class PlayerBrain : IDisposable
     {
         private readonly PlayerEntity _playerEntity;
         private readonly List<IEntityInputSource> _inputSources;
@@ -12,6 +15,7 @@ namespace Player
         {
             _playerEntity = playerEntity;
             _inputSources = inputSources;
+            ProjectUpdater.Instanse.FixedUpdateCalled += OnFixedUpdate;
         }
 
         public void OnFixedUpdate()
@@ -52,5 +56,6 @@ namespace Player
         }
 
         private bool IsUse() => _inputSources.Any(source => source.Use);
+        public void Dispose() => ProjectUpdater.Instanse.FixedUpdateCalled -= OnFixedUpdate;
     }
 }

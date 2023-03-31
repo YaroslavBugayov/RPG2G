@@ -1,3 +1,5 @@
+using Core.Movement.Controller;
+using Core.Movement.Data;
 using UnityEngine;
 
 namespace Player
@@ -5,18 +7,20 @@ namespace Player
     [RequireComponent(typeof(Rigidbody2D), typeof(Animator))]
     public class PlayerEntity : MonoBehaviour
     {
-        [SerializeField] private float _speed;
-
+        [SerializeField] private DirectionalMovementData _directionalMovementData;
+        
         private Vector2 _movement;
         private float _movementSpeed;
         
         private Rigidbody2D _rigidbody;
         private Animator _animator;
+        private DirectionalMover _directionalMover;
     
         private void Start()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
+            _directionalMover = new DirectionalMover(_rigidbody, _directionalMovementData);
         }
 
         private void Update()
@@ -29,11 +33,8 @@ namespace Player
             
         }
 
-        public void Move(float horizontalDirection, float verticalDirection)
-        {
-            _movement = new Vector2(horizontalDirection, verticalDirection);
-            _rigidbody.MovePosition(_rigidbody.position + _movement * (_speed * Time.fixedDeltaTime));
-        }
+        public void Move(float horizontalDirection, float verticalDirection) =>
+            _directionalMover.Move(horizontalDirection, verticalDirection);
 
         private void SetAnimation()
         {
