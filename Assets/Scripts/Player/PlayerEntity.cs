@@ -1,6 +1,7 @@
 using Core.Movement.Controller;
 using Core.Movement.Data;
 using Player.PlayerAnimation;
+using StatsSystem;
 using UnityEngine;
 
 namespace Player
@@ -15,11 +16,11 @@ namespace Player
         private DirectionalMover _directionalMover;
         private AnimatorController _animatorController;
     
-        private void Start()
+        public void Initialize(IStatValueGiver statValueGiver)
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
-            _directionalMover = new DirectionalMover(_rigidbody, _directionalMovementData);
+            _directionalMover = new DirectionalMover(_rigidbody, _directionalMovementData, statValueGiver);
             _animatorController = new AnimatorController(_animator);
         }
 
