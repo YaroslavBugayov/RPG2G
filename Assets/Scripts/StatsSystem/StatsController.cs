@@ -54,7 +54,7 @@ namespace StatsSystem
                 return;
 
             var expiredModificator = _activeModificators.Where(modificator =>
-                modificator.StartTime + modificator.Duration >= Time.time);
+                modificator.StartTime + modificator.Duration <= Time.time);
 
             foreach (var modificator in expiredModificator)
                 ProcessModificator(modificator);
