@@ -60,5 +60,7 @@ namespace Core.Services.Updater
             }
             LateUpdateCalled?.Invoke();
         }
+
+
     }
 }

@@ -27,6 +27,7 @@ namespace Player
         public void Use()
         {
             
+            
         }
 
         public void Move(float horizontalDirection, float verticalDirection)
