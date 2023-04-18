@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -143,8 +143,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc5008f7b5c2b4bb6905cbff77033fad
-      internalID: -1198050786
+      spriteID: 0ead06489ff182e4b83ecbde393c9e99
+      internalID: 1112948965
       vertices: []
       indices: 
       edges: []
@@ -164,8 +164,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98d514f736d0e47c2b3cc7a7ea93b4b1
-      internalID: 844287506
+      spriteID: a2d21c888feb75d41b83f670c7918621
+      internalID: -664212549
       vertices: []
       indices: 
       edges: []
@@ -185,8 +185,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 90bb997f882e94d1bbd751648092e7c4
-      internalID: 1422659826
+      spriteID: 03588d083c2fe64499f373448286618f
+      internalID: -1154269538
       vertices: []
       indices: 
       edges: []
@@ -206,8 +206,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5acba0998cd624357952e2260c4cf348
-      internalID: 1932259290
+      spriteID: d79a813260a59864d9da4e37569a740d
+      internalID: 1851513235
       vertices: []
       indices: 
       edges: []
@@ -227,8 +227,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a84f5871077e4e75b516f5ffa891db8
-      internalID: 9774061
+      spriteID: e33374fae03d018469ef7db73a061e2d
+      internalID: -1409150555
       vertices: []
       indices: 
       edges: []
@@ -248,8 +248,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d39d5a6afe77847adb43fec58bb48714
-      internalID: -1303226785
+      spriteID: 18d90237a206f294d86b972dbb67cfce
+      internalID: 156640965
       vertices: []
       indices: 
       edges: []
@@ -265,12 +265,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Basic tools and meterials_5: -1303226785
-      Basic tools and meterials_1: 844287506
-      Basic tools and meterials_3: 1932259290
-      Basic tools and meterials_4: 9774061
-      Basic tools and meterials_0: -1198050786
-      Basic tools and meterials_2: 1422659826
+      Basic tools and meterials_5: 156640965
+      Basic tools and meterials_1: -664212549
+      Basic tools and meterials_3: 1851513235
+      Basic tools and meterials_4: -1409150555
+      Basic tools and meterials_0: 1112948965
+      Basic tools and meterials_2: -1154269538
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
