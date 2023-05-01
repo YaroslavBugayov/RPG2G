@@ -428,7 +428,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be93c65ae31e47da82eb52321d731b86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sprite: {fileID: 0}
-  _text: {fileID: 0}
-  _button: {fileID: 0}
-  _canvas: {fileID: 0}
+  _sprite: {fileID: 5911403158292459815}
+  _text: {fileID: 5911403157264646462}
+  _button: {fileID: 5911403157264646460}
+  _canvas: {fileID: 5911403157951652529}
+  _dropRadius: 1
+  _dropAnimDuration: 2
+  _itemTransform: {fileID: 5911403158292459814}
+  <InteractionDistance>k__BackingField: 1

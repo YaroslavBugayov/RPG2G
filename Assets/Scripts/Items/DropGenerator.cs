@@ -9,9 +9,9 @@ namespace Items
 {
     public class DropGenerator
     {
-        private PlayerEntity _playerEntity;
-        private List<ItemDescriptor> _itemDescriptors;
-        private ItemsSystem _itemsSystem;
+        private readonly PlayerEntity _playerEntity;
+        private readonly List<ItemDescriptor> _itemDescriptors;
+        private readonly ItemsSystem _itemsSystem;
 
         public DropGenerator(List<ItemDescriptor> itemDescriptors, PlayerEntity playerEntity, ItemsSystem itemsSystem)
         {
