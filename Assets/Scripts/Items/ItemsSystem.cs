@@ -8,20 +8,20 @@ namespace Items
 {
     public class ItemsSystem
     {
-        private SceneItem _sceneItem;
-        private Transform _transform;
-        private LayerMask _whatIsPlayer;
-        private ItemsFactory _itemsFactory;
-
-        private Dictionary<SceneItem, Item> _itemOnScene;
+        private readonly SceneItem _sceneItem;
+        private readonly Transform _transform;
+        private readonly LayerMask _whatIsPlayer;
+        private readonly ItemsFactory _itemsFactory;
+        private readonly Dictionary<SceneItem, Item> _itemOnScene;
 
         public ItemsSystem(LayerMask whatIsPlayer, ItemsFactory itemsFactory)
         {
-            //Don't see this path
             _sceneItem = Resources.Load<SceneItem>($"{nameof(ItemsSystem)}/{nameof(SceneItem)}"); 
             _itemOnScene = new Dictionary<SceneItem, Item>();
-            GameObject gameObject = new GameObject();
-            gameObject.name = nameof(ItemsSystem);
+            GameObject gameObject = new GameObject
+            {
+                name = nameof(ItemsSystem)
+            };
             _transform = gameObject.transform;
             _whatIsPlayer = whatIsPlayer;
             _itemsFactory = itemsFactory;

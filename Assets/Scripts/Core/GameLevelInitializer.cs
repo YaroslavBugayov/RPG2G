@@ -7,7 +7,6 @@ using Items;
 using Items.Data;
 using Items.Storage;
 using Player;
-using StatsSystem;
 using UnityEngine;
 
 namespace Core
@@ -32,10 +31,7 @@ namespace Core
         {
             _disposables = new List<IDisposable>();
             
-            if (ProjectUpdater.Instanse == null)
-                _projectUpdater = new GameObject().AddComponent<ProjectUpdater>();
-            else
-                _projectUpdater = ProjectUpdater.Instanse as ProjectUpdater;
+            InitializeProjectUpdater();
             
             _externalDeviceInputReader = new ExternalDeviceInputReader();
             
@@ -45,12 +41,7 @@ namespace Core
                 _externalDeviceInputReader
             });
 
-            ItemsFactory itemsFactory = new ItemsFactory(_playerSystem.StatsController);
-            _itemsSystem = new ItemsSystem(_whatIsPlayer, itemsFactory);
-            List<ItemDescriptor> descriptors =
-                _itemsStorage.Descriptors.Select(scriptable => scriptable.Descriptor).ToList();
-            
-            _dropGenerator = new DropGenerator(descriptors, _playerEntity, _itemsSystem);
+            InitializeItemsSystem();
         }
 
         private void Update()
@@ -67,6 +58,24 @@ namespace Core
             {
                 disposable.Dispose();
             }
+        }
+        
+        private void InitializeProjectUpdater()
+        {
+            if (ProjectUpdater.Instanse == null)
+                _projectUpdater = new GameObject().AddComponent<ProjectUpdater>();
+            else
+                _projectUpdater = ProjectUpdater.Instanse as ProjectUpdater;
+        }
+        
+        private void InitializeItemsSystem()
+        {
+            ItemsFactory itemsFactory = new ItemsFactory(_playerSystem.StatsController);
+            _itemsSystem = new ItemsSystem(_whatIsPlayer, itemsFactory);
+            List<ItemDescriptor> descriptors =
+                _itemsStorage.Descriptors.Select(scriptable => scriptable.Descriptor).ToList();
+
+            _dropGenerator = new DropGenerator(descriptors, _playerEntity, _itemsSystem);
         }
     }
 }
