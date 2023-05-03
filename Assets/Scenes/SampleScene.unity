@@ -85850,6 +85850,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerEntity: {fileID: 1323533149}
   _gameUIInputView: {fileID: 589596340}
+  _whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 64
+  _itemsStorage: {fileID: 11400000, guid: a4c6ac23bd8294ed8aabd2702fe90146, type: 2}
 --- !u!4 &609240436
 Transform:
   m_ObjectHideFlags: 0
@@ -108910,7 +108914,7 @@ GameObject:
   - component: {fileID: 1323533143}
   - component: {fileID: 1323533149}
   - component: {fileID: 1323533150}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
