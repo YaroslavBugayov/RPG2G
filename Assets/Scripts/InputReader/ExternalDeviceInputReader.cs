@@ -9,6 +9,7 @@ namespace InputReader
         public float HorizontalDirection => Input.GetAxis("Horizontal");
         public float VerticalDirection => Input.GetAxis("Vertical");
         public bool Use { get; private set; }
+        public bool Collect { get; private set;}
         
         public event Action InventoryRequested;
         public event Action InventoryClosed;
@@ -21,6 +22,7 @@ namespace InputReader
         public void ResetOneTimeActions()
         {
             Use = false;
+            Collect = false;
         }
         
         public void Dispose() => ProjectUpdater.Instanse.UpdateCalled -= OnUpdate;
@@ -29,6 +31,9 @@ namespace InputReader
         {
             if (Input.GetButtonDown("Use"))
                 Use = true;
+            
+            if (Input.GetButtonDown("Collect"))
+                Collect = true;
 
             if (Input.GetKeyDown(KeyCode.E))
                 InventoryRequested?.Invoke();

@@ -1,5 +1,6 @@
 using Core.Movement.Controller;
 using Core.Movement.Data;
+using InputReader;
 using Player.PlayerAnimation;
 using StatsSystem;
 using StatsSystem.Enum;
@@ -14,7 +15,9 @@ namespace Player
         [SerializeField] private DirectionalMovementData _directionalMovementData;
         [SerializeField] private UnityEvent<float> hpChangedProcent;
         [SerializeField] private UnityEvent<float> energyChangedProcent;
+        [SerializeField] private GameUIInputView _gameUiInputView;
         [SerializeField] private UnityEvent die;
+        [SerializeField] private Tool tool;
 
         private Rigidbody2D _rigidbody;
         private Animator _animator;
@@ -66,8 +69,11 @@ namespace Player
 
         public void Use()
         {
-            
-            
+        }
+
+        public void Collect()
+        {
+            tool.Use();
         }
 
         public void Move(float horizontalDirection, float verticalDirection)
@@ -86,5 +92,24 @@ namespace Player
             Energy = _energy + energy;
         }
 
+        private void OnTriggerEnter2D(Collider2D collider)
+        {
+            Tree tree = collider.GetComponent<Tree>();
+            
+            if (tree != null)
+            {
+                _gameUiInputView.ShowCollectButton();
+            }
+        }
+        
+        private void OnTriggerExit2D(Collider2D collider)
+        {
+            Tree tree = collider.GetComponent<Tree>();
+            
+            if (tree != null)
+            {
+                _gameUiInputView.HideCollectButton();
+            }
+        }
     }
 }
