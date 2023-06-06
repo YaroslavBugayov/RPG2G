@@ -43,6 +43,7 @@ namespace Items
             _itemOnScene.Add(sceneItem, item);
         }
         
+
         private void TryPickItem(SceneItem sceneItem)
         {
             Collider2D player = 

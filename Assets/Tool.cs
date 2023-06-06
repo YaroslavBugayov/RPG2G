@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Tree = Environment.Tree;
 
 public class Tool : MonoBehaviour
 {
@@ -25,7 +24,7 @@ public class Tool : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collider)
     {
         Tree tree = collider.GetComponent<Tree>();
-        
+            
         if (tree != null)
         {
             tree.Harvest();
