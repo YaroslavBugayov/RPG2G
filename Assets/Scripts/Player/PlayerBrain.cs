@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Core.Services.Updater;
 using InputReader;
+using UnityEngine;
 
 namespace Player
 {
@@ -16,6 +17,7 @@ namespace Player
             _playerEntity = playerEntity;
             _inputSources = inputSources;
             ProjectUpdater.Instanse.FixedUpdateCalled += OnFixedUpdate;
+            ProjectUpdater.Instanse.UpdateCalled += OnUpdate;
         }
 
         public void OnFixedUpdate()
@@ -27,6 +29,14 @@ namespace Player
             
             foreach (var inputSource in _inputSources)
                 inputSource.ResetOneTimeActions();    
+        }
+        public void OnUpdate()
+        {
+            if(Input.GetKeyUp(KeyCode.G))
+                _playerEntity.GetDamage();
+            
+            if(Input.GetKeyUp(KeyCode.H))
+                _playerEntity.UseEnergy();
         }
 
         private float GetHorizontalDirection()
@@ -56,6 +66,12 @@ namespace Player
         }
 
         private bool IsUse() => _inputSources.Any(source => source.Use);
-        public void Dispose() => ProjectUpdater.Instanse.FixedUpdateCalled -= OnFixedUpdate;
+
+        public void Dispose()
+        {
+            ProjectUpdater.Instanse.FixedUpdateCalled -= OnFixedUpdate;
+            ProjectUpdater.Instanse.UpdateCalled -= OnUpdate;
+        }
+
     }
 }

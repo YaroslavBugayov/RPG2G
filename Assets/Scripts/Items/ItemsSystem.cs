@@ -13,8 +13,9 @@ namespace Items
         private readonly LayerMask _whatIsPlayer;
         private readonly ItemsFactory _itemsFactory;
         private readonly Dictionary<SceneItem, Item> _itemOnScene;
+        private readonly Inventory _inventory;
 
-        public ItemsSystem(LayerMask whatIsPlayer, ItemsFactory itemsFactory)
+        public ItemsSystem(LayerMask whatIsPlayer, ItemsFactory itemsFactory, Inventory inventory)
         {
             _sceneItem = Resources.Load<SceneItem>($"{nameof(ItemsSystem)}/{nameof(SceneItem)}"); 
             _itemOnScene = new Dictionary<SceneItem, Item>();
@@ -25,6 +26,7 @@ namespace Items
             _transform = gameObject.transform;
             _whatIsPlayer = whatIsPlayer;
             _itemsFactory = itemsFactory;
+            _inventory = inventory;
         }
         
         public void DropItem(ItemDescriptor descriptor, Vector2 position)
@@ -49,10 +51,10 @@ namespace Items
             if(player == null)
                 return;
             Item item = _itemOnScene[sceneItem];
-            Debug.Log($"AddingItemToInventory {item.Descriptor.ItemId}");
+            _inventory.AddItem(item);
             _itemOnScene.Remove(sceneItem);
             sceneItem.ItemClicked -= TryPickItem;
-            Object.Destroy(sceneItem);
+            Object.Destroy(sceneItem.gameObject);
         }
     }
 }
