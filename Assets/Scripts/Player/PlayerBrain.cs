@@ -27,6 +27,9 @@ namespace Player
             if (IsUse())
                 _playerEntity.Use();
             
+            if (IsCollect())
+                _playerEntity.Collect();
+            
             foreach (var inputSource in _inputSources)
                 inputSource.ResetOneTimeActions();    
         }
@@ -66,12 +69,12 @@ namespace Player
         }
 
         private bool IsUse() => _inputSources.Any(source => source.Use);
+        private bool IsCollect() => _inputSources.Any(source => source.Collect);
 
         public void Dispose()
         {
             ProjectUpdater.Instanse.FixedUpdateCalled -= OnFixedUpdate;
             ProjectUpdater.Instanse.UpdateCalled -= OnUpdate;
         }
-
     }
 }
