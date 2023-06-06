@@ -5,5 +5,7 @@ namespace Items.Enum
         None = 0,
         WateringCan = 1,
         Axe = 2,
+        Apple = 3,
+        Milk = 4
     }
 }

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7be3bbc95cf04c7fb0b5461eefbe8dd, type: 3}
+  m_Name: AppleData
+  m_EditorClassIdentifier: 
+  _descriptor:
+    <ItemId>k__BackingField: 5
+    <ItemType>k__BackingField: 3
+    <ItemSprite>k__BackingField: {fileID: 516611210, guid: b8028bae1b5325c42be6d9ad08d2e7d8, type: 3}

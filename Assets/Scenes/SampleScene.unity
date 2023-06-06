@@ -86206,6 +86206,7 @@ MonoBehaviour:
     m_Bits: 64
   _itemsStorage: {fileID: 11400000, guid: a4c6ac23bd8294ed8aabd2702fe90146, type: 2}
   _uiContext: {fileID: 354445063}
+  _serviceLocator: {fileID: 1497930809}
 --- !u!4 &609240436
 Transform:
   m_ObjectHideFlags: 0
@@ -86217,7 +86218,8 @@ Transform:
   m_LocalPosition: {x: 1532.4364, y: 561.43536, z: -5.663246}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1497930810}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -113976,6 +113978,50 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1497930808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1497930810}
+  - component: {fileID: 1497930809}
+  m_Layer: 0
+  m_Name: ServiceLocator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1497930809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497930808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb137ce219f4bf9848a8b1499e1f339, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1497930810
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497930808}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 609240436}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1525386415 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8009016230484219830, guid: 8c7b3ef8a99884345a9ce5a51f23dcb9, type: 3}
@@ -114009,6 +114055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eb7ad42c2cad4f0db187df5ee424cdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _serviceLocator: {fileID: 1497930809}
 --- !u!50 &1525386420
 Rigidbody2D:
   serializedVersion: 4
