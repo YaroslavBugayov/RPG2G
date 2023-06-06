@@ -13,14 +13,13 @@ namespace Items
 
         public Item CreateItem(ItemDescriptor descriptor)
         {
-            switch (descriptor.ItemType)
+            return descriptor.ItemType switch
             {
-                case ItemType.Axe:
-                case ItemType.WateringCan:
-                    return new Potion(descriptor, _statsController);
-                default:
-                    throw new NullReferenceException($"Item type {descriptor.ItemType} is not implemented yet");
-            }
+                ItemType.Axe => new Potion(descriptor, _statsController),
+                ItemType.WateringCan => new Potion(descriptor, _statsController),
+                ItemType.Apple => new Potion(descriptor, _statsController),
+                _ => throw new NullReferenceException($"Item type {descriptor.ItemType} is not implemented yet")
+            };
         }
 
         private ItemType GetItemType(ItemDescriptor descriptor)
@@ -33,25 +32,7 @@ namespace Items
                     return ItemType.WateringCan;
                 default:
                     return ItemType.None;
-                
             }
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

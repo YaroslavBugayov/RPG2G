@@ -24,7 +24,7 @@ namespace Items
         public void AddItem(Item item)
         {
             if (_items.Count + 1 > MaxSize)
-                throw new ArgumentException("Wrong Action! Ypu can't add Item!");
+                throw new ArgumentException("Wrong Action! You can't add Item!");
 
             _items.Add(item);
             ItemsChanged?.Invoke(Items);

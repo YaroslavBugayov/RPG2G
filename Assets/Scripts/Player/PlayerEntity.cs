@@ -6,6 +6,7 @@ using StatsSystem;
 using StatsSystem.Enum;
 using UnityEngine;
 using UnityEngine.Events;
+using Tree = Environment.Tree;
 
 namespace Player
 {

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Core.Services.Locator;
 using Core.Services.Updater;
 using InputReader;
 using Items;
@@ -19,6 +20,7 @@ namespace Core
         [SerializeField] private LayerMask _whatIsPlayer;
         [SerializeField] private ItemsStorage _itemsStorage;
         [SerializeField] private UIContext _uiContext;
+        [SerializeField] private ServiceLocator _serviceLocator;
         
         private ExternalDeviceInputReader _externalDeviceInputReader;
         private PlayerSystem _playerSystem;
@@ -37,6 +39,13 @@ namespace Core
             InitializePlayerSystem();
             InitializeItemsSystem();
             InitializeUIContext();
+            InitializeServiceLocator();
+        }
+
+        private void InitializeServiceLocator()
+        {
+            _serviceLocator.Initialize();
+            _serviceLocator.AddService(typeof(IItemGenerator), _dropGenerator);
         }
 
         private void Update()
