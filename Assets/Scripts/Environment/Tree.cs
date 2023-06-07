@@ -34,9 +34,16 @@ namespace Environment
             {
                 _dropGenerator.DropItem(ItemType.Apple, transform.position);
                 _spriteRenderer.sprite = _hasNotHarvestSprite;
+                Invoke(nameof(GrowHarvest), 30);
             }
 
             _hasHarvest = false;
+        }
+
+        private void GrowHarvest()
+        {
+            _hasHarvest = true;
+            _spriteRenderer.sprite = _hasHarvestSprite;
         }
     }
 }
