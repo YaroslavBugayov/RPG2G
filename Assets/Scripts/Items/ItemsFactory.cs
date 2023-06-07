@@ -18,6 +18,7 @@ namespace Items
                 ItemType.Axe => new Potion(descriptor, _statsController),
                 ItemType.WateringCan => new Potion(descriptor, _statsController),
                 ItemType.Apple => new Potion(descriptor, _statsController),
+                ItemType.Milk => new Potion(descriptor, _statsController),
                 _ => throw new NullReferenceException($"Item type {descriptor.ItemType} is not implemented yet")
             };
         }
@@ -30,6 +31,8 @@ namespace Items
                     return ItemType.Axe;
                 case ItemType.WateringCan:
                     return ItemType.WateringCan;
+                case ItemType.Milk:
+                    return ItemType.Milk;
                 default:
                     return ItemType.None;
             }

@@ -16,7 +16,7 @@ namespace Environment
             _dropGenerator = _serviceLocator.GetService<IItemGenerator>();
         }
 
-        public void Harvest() 
+        public void Milking() 
         {
             _dropGenerator.DropItem(ItemType.Milk, transform.position);
         }

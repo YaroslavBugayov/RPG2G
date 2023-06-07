@@ -1,5 +1,6 @@
 using Core.Movement.Controller;
 using Core.Movement.Data;
+using Environment;
 using InputReader;
 using Player.PlayerAnimation;
 using StatsSystem;
@@ -96,8 +97,14 @@ namespace Player
         private void OnTriggerEnter2D(Collider2D collider)
         {
             Tree tree = collider.GetComponent<Tree>();
+            Cow cow = collider.GetComponent<Cow>();
             
             if (tree != null)
+            {
+                _gameUiInputView.ShowCollectButton();
+            }
+            
+            if (cow != null)
             {
                 _gameUiInputView.ShowCollectButton();
             }
@@ -106,8 +113,14 @@ namespace Player
         private void OnTriggerExit2D(Collider2D collider)
         {
             Tree tree = collider.GetComponent<Tree>();
+            Cow cow = collider.GetComponent<Cow>(); 
             
             if (tree != null)
+            {
+                _gameUiInputView.HideCollectButton();
+            }
+            
+            if (cow != null)
             {
                 _gameUiInputView.HideCollectButton();
             }

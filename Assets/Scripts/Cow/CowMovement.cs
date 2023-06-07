@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cow : MonoBehaviour
+public class CowMovement : MonoBehaviour
 {
     public Transform[] waypoints; // Array of waypoints for the cow to move to
     public float stopTime = 2f; // Time to stop at each waypoint
@@ -36,6 +36,10 @@ public class Cow : MonoBehaviour
             // If the cow is moving, move towards the current waypoint
             Vector3 targetPosition = waypoints[currentWaypointIndex].position;
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, Time.deltaTime);
+            transform.localScale = 
+                transform.position.x < targetPosition.x 
+                    ? new Vector3(1, 1, 1) 
+                    : new Vector3(-1, 1, 1);
 
             // Check if the cow has reached the current waypoint
             if (transform.position == targetPosition)
